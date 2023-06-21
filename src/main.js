@@ -1,8 +1,21 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
-Vue.config.productionTip = false
+// import 'bootstrap/dist/css/bootstrap.css'
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import "@coreui/coreui/dist/css/coreui.min.css";
+
+Vue.config.productionTip = false;
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue);
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin);
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  store,
+  render: (h) => h(App),
+}).$mount("#app");
